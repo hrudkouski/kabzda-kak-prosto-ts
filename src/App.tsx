@@ -5,13 +5,15 @@ import {Ratings} from "./components/Ratings";
 function App() {
     return (
         <div>
+            <Ratings value={0}/>
             <PageTittle titlePage='This is App component'/>
-            <Ratings value={3}/>
-            <Accordion titleValue={'new menuuu'} collapsed={true}/>
-            <Ratings value={4}/>
-            <Accordion titleValue={'NEW MENUUU'} collapsed={false}/>
             <Ratings value={1}/>
+            <Accordion titleValue={'new menuuu'} collapsed={true}/>
+            <Ratings value={2}/>
+            <Accordion titleValue={'NEW MENUUU'} collapsed={false}/>
+            <Ratings value={3}/>
             <PageTittle titlePage='This is component'/>
+            <Ratings value={4}/>
         </div>
     );
 }

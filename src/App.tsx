@@ -1,27 +1,40 @@
-import React from 'react';
-import Accordion from "./components/Accordion";
-import {OnOff} from './components/OnOff';
-import {Ratings} from "./components/Ratings";
-import UncontrolledAccordion from './components/UncontrolledAccordion';
-import {UncontrolledRatings} from "./components/Uncontrolled.Ratings";
+import React, {useState} from 'react';
+import Accordion, {AccordionCollapsedType} from "./components/Accordion/Accordion";
+import {UncontrolledOnOff} from './components/OnOff/UncontrolledOnOff';
+import {Ratings, RatingValueType} from "./components/Rating/Ratings";
+import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
+import {UncontrolledRatings} from "./components/Rating/Uncontrolled.Ratings";
+import './App.css'
+import {OnOff, SwitchOnType} from './components/OnOff/OnOff';
 
 function App() {
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(3);
+    let [accordionCollapsed, setAccordionCollapsed] = useState<AccordionCollapsedType>(false);
+    let [switchOn, setSwitchOn] = useState<SwitchOnType>(true);
+
     return (
-        <div>
-            {/*<Ratings value={0}/>*/}
-            {/*<PageTittle titlePage='This is App component'/>*/}
-            {/*<Ratings value={1}/>*/}
-            {/*<Accordion titleValue={'new menu'} collapsed={true}/>*/}
-            {/*<Ratings value={2}/>*/}
-            {/*<Accordion titleValue={'NEW MENU'} collapsed={false}/>*/}
-            {/*<Ratings value={3}/>*/}
-            {/*<PageTittle titlePage='This is component'/>*/}
-            {/*<Ratings value={4}/>*/}
-            <OnOff/>
-            <OnOff/>
-            <UncontrolledAccordion titleValue={'new'}/>
-            <UncontrolledAccordion titleValue={'menu'}/>
+        <div className={'appWrapper'}>
+            <PageTittle titlePage='This is App component'/>
+
+            <UncontrolledOnOff/>
+            <OnOff onClick={setSwitchOn}
+                   on={switchOn}
+            />
+
+            <UncontrolledAccordion titleValue={'Uncontrolled Accordion'}/>
+            <Accordion
+                titleValue={'Controlled Accordion'}
+                collapsed={accordionCollapsed}
+                onClick={setAccordionCollapsed}
+            />
+
             <UncontrolledRatings/>
+            <Ratings
+                onClick={setRatingValue}
+                value={ratingValue}
+            />
+
         </div>
     );
 }

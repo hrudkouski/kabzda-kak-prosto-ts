@@ -1,10 +1,9 @@
 import React from 'react';
 
-export type SwitchOnType = boolean;
-
 type OnOffPropsType = {
-    on: SwitchOnType
-    onClick: (on: SwitchOnType) => void
+    on: boolean
+    onClick: (on: boolean) => void
+    //onChange: (on: boolean) => void
 }
 
 export const OnOff = (props: OnOffPropsType) => {
@@ -35,8 +34,22 @@ export const OnOff = (props: OnOffPropsType) => {
 
     return (
         <div>
-            <div onClick={() => props.onClick(!props.on)} style={onStyle}>On</div>
-            <div onClick={() => props.onClick(!props.on)} style={offStyle}>Off</div>
+            <div
+                onClick={() => props.onClick(!props.on)}
+                style={onStyle}>On
+            </div>
+            {/*<div*/}
+            {/*    onClick={() => props.onChange(true)}*/}
+            {/*    style={onStyle}>On*/}
+            {/*</div>*/}
+            <div
+                onClick={() => props.onClick(!props.on)}
+                style={offStyle}>Off
+            </div>
+            {/*<div*/}
+            {/*    onClick={() => props.onChange(false)}*/}
+            {/*    style={onStyle}>On*/}
+            {/*</div>*/}
             <div style={indicatorStyle}>(!)</div>
         </div>
     )

@@ -1,32 +1,34 @@
 import React, {useState} from 'react';
-import Accordion, {AccordionCollapsedType} from "./components/Accordion/Accordion";
+import Accordion from "./components/Accordion/Accordion";
 import {UncontrolledOnOff} from './components/OnOff/UncontrolledOnOff';
 import {Ratings, RatingValueType} from "./components/Rating/Ratings";
 import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
 import {UncontrolledRatings} from "./components/Rating/Uncontrolled.Ratings";
 import './App.css'
-import {OnOff, SwitchOnType} from './components/OnOff/OnOff';
+import {OnOff} from './components/OnOff/OnOff';
 
 function App() {
 
-    let [ratingValue, setRatingValue] = useState<RatingValueType>(3);
-    let [accordionCollapsed, setAccordionCollapsed] = useState<AccordionCollapsedType>(false);
-    let [switchOn, setSwitchOn] = useState<SwitchOnType>(true);
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(4);
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
+    let [switchOn, setSwitchOn] = useState<boolean>(true);
 
     return (
         <div className={'appWrapper'}>
             <PageTittle titlePage='This is App component'/>
 
-            <UncontrolledOnOff/>
-            <OnOff onClick={setSwitchOn}
-                   on={switchOn}
-            />
+            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+            {/*<OnOff*/}
+            {/*    onClick={setSwitchOn}*/}
+            {/*    on={switchOn}*/}
+            {/*    // onChange = { (on) => setSwitchOn(on) }*/}
+            {/*/>*/}
 
             <UncontrolledAccordion titleValue={'Uncontrolled Accordion'}/>
             <Accordion
                 titleValue={'Controlled Accordion'}
                 collapsed={accordionCollapsed}
-                onClick={setAccordionCollapsed}
+                onChange={() => setAccordionCollapsed(!accordionCollapsed)}
             />
 
             <UncontrolledRatings/>

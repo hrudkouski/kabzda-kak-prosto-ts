@@ -3,9 +3,9 @@ import Accordion from "./components/Accordion/Accordion";
 import {UncontrolledOnOff} from './components/OnOff/UncontrolledOnOff';
 import {Ratings, RatingValueType} from "./components/Rating/Ratings";
 import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
-import {UncontrolledRatings} from "./components/Rating/Uncontrolled.Ratings";
+// import {UncontrolledRatings} from "./components/Rating/UncontrolledRatings";
 import './App.css'
-import {OnOff} from './components/OnOff/OnOff';
+// import {OnOff} from './components/OnOff/OnOff';
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
                 onChange={() => setAccordionCollapsed(!accordionCollapsed)}
             />
 
-            <UncontrolledRatings/>
+            {/*<UncontrolledRatings />*/}
             <Ratings
                 onClick={setRatingValue}
                 value={ratingValue}

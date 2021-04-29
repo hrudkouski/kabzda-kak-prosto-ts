@@ -4,6 +4,8 @@ export type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
     onChange: () => void
+    // items: ItemType[]
+    // onClick: (value: any) => void
 }
 
 function Accordion(props: AccordionPropsType) {

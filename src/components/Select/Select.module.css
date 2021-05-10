@@ -1,0 +1,25 @@
+.select {
+    margin-top: 55px;
+}
+
+.select .main {
+    border: solid 1px black;
+    display: inline-block;
+    min-width: 70px;
+    min-height: 20px;
+}
+
+.items {
+    border: solid 1px black;
+    position: absolute;
+    min-width: 70px;
+    border-top: none;
+}
+
+.item.selected {
+    background-color: #1ea7fd;
+}
+
+.item.selected:hover {
+    background-color: #1ea7fd;
+}

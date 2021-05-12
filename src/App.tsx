@@ -25,18 +25,18 @@ function App() {
             {/*/>*/}
 
             <UncontrolledAccordion titleValue={'Uncontrolled Accordion'}/>
-            <Accordion
-                titleValue={'Controlled Accordion'}
-                collapsed={accordionCollapsed}
-                onChange={() => setAccordionCollapsed(!accordionCollapsed)}
-            />
+            {/*<Accordion*/}
+            {/*    titleValue={'Controlled Accordion'}*/}
+            {/*    collapsed={accordionCollapsed}*/}
+            {/*    onChange={() => setAccordionCollapsed(!accordionCollapsed)}*/}
+            {/*    items={}*/}
+            {/*/>*/}
 
             {/*<UncontrolledRatings />*/}
             <Ratings
                 onClick={setRatingValue}
                 value={ratingValue}
             />
-
         </div>
     );
 }

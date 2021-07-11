@@ -4,7 +4,6 @@ import s from "./Clock.module.css";
 
 export const AnalogClockView: React.FC<ClocksViewPropsType> = ({date}) => {
 
-
     const secondsStyle = {
         transform: `rotate(${date.getSeconds() * 6}deg)`
     };
